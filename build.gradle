@@ -1,7 +1,6 @@
-
 plugins {
-    id 'org.springframework.boot' version "$springBootVersion"
-    id 'io.spring.dependency-management' version "${springBootDependencyManagementVersion}"
+    id 'org.springframework.boot' version '2.3.2.RELEASE'
+    id 'io.spring.dependency-management' version "1.0.9.RELEASE"
     id 'java'
 }
 dependencyManagement {
@@ -19,24 +18,9 @@ repositories {
     jcenter()
     mavenCentral()
 }
-group = 'SpringCloudExample'
+group = 'LearningExample'
 version = '1.0'
 sourceCompatibility = '1.8'
 dependencies {
-    // This dependency is used by the application.
-    implementation 'com.google.guava:guava:28.0-jre'
+}
 
-    // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
-}
-dependencies {
-    implementation 'org.springframework.cloud:spring-cloud-config-server'
-    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-    compile 'org.springframework.cloud:spring-cloud-starter-config'
-}
-jar {
-    manifest {
-        attributes "Manifest-Version": 1.0,
-                'Main-Class': 'SpringCloudExample.App'
-    }
-}
